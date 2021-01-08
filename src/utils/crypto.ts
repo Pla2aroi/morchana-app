@@ -17,7 +17,7 @@ export const refetchDDCPublicKey = async () => {
         'Content-Type': 'application/json',
       },
     })
-    if (resp.status === 200) {
+    if (!!resp && +resp.status === 200) {
       publicKey = await resp.text()
     }
   } catch (err) {
